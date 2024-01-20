@@ -1,0 +1,383 @@
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+body {
+    margin: -10;
+    border-top: 3;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+/* navbar */
+.sidebar {
+    width: 8rem;
+    height: 100%;
+    background: linear-gradient(to top right, hwb(150 10% 10% / .5), hwb(250 10% 10% / .4));
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.menu-icon {
+    margin-top: 3rem;
+    cursor: pointer;
+}
+
+.menu-icon:hover .line {
+    width: 2.5rem;
+}
+
+.line {
+    height: .2rem;
+    width: 2.5rem;
+    background-color: #222;
+    margin-bottom: .6rem;
+}
+
+.line-1, .line-3 {
+    width: 1.8rem;
+    transition: all .4s;
+}
+
+.social-icons-list {
+    list-style: none;
+    padding: 0;
+    height: 25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    grid-row: 3 / 4;
+}
+
+.social-link {
+    font-size: 3rem;
+    color: #777;
+    transition: color .3s;
+    background-color:  rgba(255, 255, 255, 0.8);
+    filter: blur(.5px); 
+    padding: 0.5rem 1rem;
+    border-radius: 50%; 
+    margin: 0.5rem 0;
+    opacity: .5;
+}
+
+.social-link:hover {
+    color: linear-gradient(to right, hwb(150 10% 10% / .5), hwb(250 10% 10% / .4));
+    background-color: #eee;
+}
+
+.year {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: gray;
+}
+
+/* end of sidebar */
+
+/* navigation */
+.navigation {
+    position: fixed;
+    left: -32rem;
+    height: 100%;
+    background: linear-gradient(to top left, hwb(150 10% 10% / .5), hwb(250 10% 10% / .4)), center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 50;
+    transition: left .8s cubic-bezier(1, 0, 0, 1);
+    width: 30rem;
+}
+
+.navigation-heading {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+    letter-spacing: .5rem;
+    color: hwb(250 10% 10% / .5);
+    text-align: center;
+}
+
+
+.navigation-item {
+    position: relative;
+}
+
+.checkbox:checked ~.navigation {
+    left: 8rem;
+}
+.checkbox:checked ~ .sidebar .line-1 {
+    transform: rotate(-405deg) translate(-5px, 6px);
+    width: 2.5rem;
+}
+
+.checkbox:checked ~ .sidebar .line-2 {
+    opacity: 0;
+}
+
+.checkbox:checked ~ .sidebar .line-3 {
+    transform: rotate(405deg) translate(-5px, -6px);
+    width: 2.4rem;
+}
+
+.checkbox:checked ~ .sidebar .navigation-search-input {
+    margin-left: 40rem;
+}
+
+/* end of navigation */
+
+.container {
+    display: grid;
+    grid-template-columns: minmax(6rem, 1fr) repeat(8, minmax(min-content, 16rem)) minmax(6rem, 1fr);
+    grid-template-rows: repeat(3, min-content) 1fr70vw;
+    gap: 1.6rem;
+}
+
+/* header */
+.header {
+    display: grid; /* Changed to grid for consistency */
+    grid-template-columns: 1fr; 
+    grid-template-rows: auto 1fr 1fr 1fr auto; 
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+}
+
+.brand {
+    display:none;
+    position: flex;
+    padding: 0;
+    position:sticky;
+    z-index: 100;
+}
+
+.banner {
+    grid-row: 2 / 3;
+    padding: 2rem;
+    margin-left: 8rem;
+    padding: 2rem;
+    align-items: center; 
+    justify-content: center; 
+    height: vh;
+    background: hwb(150 10% 10% / .2);
+    overflow: auto;
+
+}
+
+.banner-heading {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 7rem;
+    font-weight: 400;
+    margin-bottom: 0;
+    animation: anim 2s;
+}
+
+.text-paragraph {
+    grid-row: 4/5;
+    grid-column: 1/-1;
+    padding:5rem 30rem;
+    font-size: 1.6rem;
+    font-weight: 300;
+    padding-right: 2rem;
+    text-align: left;
+    max-height: 850px;
+    overflow: hidden;
+    margin-botom: 5px;
+}
+
+.paragraph-content {
+    text-align: center;
+}
+
+.bottom-paragraph {
+    position: absolute;
+    bottom: 0;
+    left: 50%; 
+    transform: translateX(-50%); 
+    width: 80%; 
+    max-width: 1200px;
+    padding: 1rem; 
+
+    font-size: 1.6rem;
+    font-weight: 300;
+    text-align: center;
+    margin: 0;
+}
+
+.text-button {
+    font-size: large;
+    font-weight: 600;
+    width: 25rem;
+    padding: 1.2rem 2rem;
+    color: #333;
+    letter-spacing: .1rem;
+    border: none;
+    border-radius: 10rem;
+    background: linear-gradient(to right, gold, goldenrod);
+    cursor: pointer;
+    outline: none;
+    animation: anim 1s 1s backwards;
+    margin: 0 auto;
+    padding-left: 2rem;
+    z-index: 1000;
+}
+
+.text-button:hover {
+    background: linear-gradient(to left, gold, goldenrod);
+}
+
+.-button:active {
+    transform: translateY(.2rem);
+}
+
+@keyframes anim {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.video-wrapper {
+    position: relative;
+    grid-template-columns: 1fr; 
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+}
+
+video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5); /* White with 50% opacity */
+}
+
+.image-overlay::before {
+    content: '';
+    position: absolute;
+    background: linear-gradient(to top, transparent, rgba(255, 255, 255, 0.7)),
+    linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.7)),
+    linear-gradient(to left, transparent, rgba(255, 255, 255, 0.7)),
+    linear-gradient(to right, transparent, rgba(255, 255, 255, 0.7));
+    z-index: -1;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 8rem;
+    width: calc(100vw - 8rem); /* Adjusting width to fill the rest of the viewport */
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    opacity: 10%;
+    border-radius: 10%; /* Rounds the corners */
+        background: repeating-linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 1),
+        rgba(255, 255, 255, 1) 1px,
+        transparent 10px,
+        transparent 10px
+    );
+}
+
+.overlay-image {
+    left: 8rem;
+    height: auto;
+    width: 100vw; 
+    margin-top: 5rem;
+    border-radius: 5%;
+}
+
+.video-paragraph {
+    position: absolute; 
+    left: 0;
+    bottom: 0; 
+    width: 100vw; 
+    padding: 3rem;
+    font-size: 1.6rem;
+    font-weight: 300;
+    text-align: center;
+    text-overflow: ellipsis;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    margin: 0;
+    box-sizing: border-box;
+    z-index: 1000;
+    padding-left: 8rem;
+    
+}
+
+.video-wrapper::after {
+    content: "";
+    position: absolute;
+    top: -10px; 
+    left: 0;
+    width: calc(100% + 20px); 
+    height: (1%); 
+    background: linear-gradient(to top, hwb(150 10% 10% / .3), hwb(250 10% 10% / .3));
+    filter: blur(20px); 
+    z-index: -1;
+}
+
+
+/* end of header */
+
+.scrollable-container {
+    overflow-y: auto; /* Add vertical scrollbar if necessary */
+    max-height: 100vh; 
+    padding-left: 10px; /* padding to avoid overlapping with scrollbar */
+}
+
+.card img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+}
+
+.card  {
+    width: 300px;
+    padding: 20px;
+    border: 5px solid transparent; /* Set an initial transparent border */
+    border-image:  linear-gradient(to top left, hwb(150 10% 10% / .5), hwb(250 10% 10% / .6)); /* Adjust the gradient colors */
+    border-image-slice: 1; /* Make the entire border use the gradient */
+    background-color: #fff;
+
+}
+
+.card:hover {
+    border-image: linear-gradient(to right, hwb(150 10% 10% / .6), hwb(250 10% 10% / .6));
+    border-image-slice: 1;
+}
+
+.card-content {
+    text-align: center;
+}
+
+ul {
+    text-align: center; 
+    padding-left: 0; 
+}
+li {
+    list-style-position: inside; 
+    text-align: center; 
+    margin-bottom: 10px; /* Add some spacing between items */
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home page</title>
+    <!-- Bootstrap link -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <!-- External links -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Major+Mono+Display&family=Montserrat:ital,wght@0,100;0,200;0,400;0,600;1,100;1,200&family=Playfair+Display+SC&family=Rubik+Bubbles&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;1,100;1,200;1,300;1,400;1,600;1,700&family=Major+Mono+Display&family=Montserrat:ital,wght@0,100;0,200;0,400;0,600;1,100;1,200&family=Playfair+Display+SC&family=Rubik+Bubbles&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/514377067a.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Styles and JS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+    <script src="{{ url_for('static', filename='js/indexhtml.js') }}" async defer></script>
+
+  </head>
+  <body>
+
+      <!-- Navigation -->
+      <div>
+        <input type="checkbox" class="checkbox" id="click" hidden />
+        <!-- Sidebar -->
+        <div class="sidebar">
+          <label for="click">
+            <div class="menu-icon">
+              <div class="line line-1"></div>
+              <div class="line line-2"></div>
+              <div class="line line-3"></div>
+            </div>
+          </label>
+
+          <!-- Social media links -->
+          <ul class="social-icons-list">
+            <li>
+              <a href="#" class="social-link">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="social-link">
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="social-link">
+                <i class="fa-brands fa-google-plus-g"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="social-link">
+                <i class="fa-brands fa-x-twitter"></i>
+              </a>
+            </li>
+          </ul>
+          <!-- End of social media links -->
+
+          <div class="year">
+            <p>2023</p>
+          </div>
+        </div>
+        <!-- End of sidebar -->
+
+        <nav class="navigation">
+          <div class="scrollable-container">
+            <div id="tournament_cards_container"></div>
+          </div>
+          </nav>
+      </div>
+      <!-- End of navigation -->
+
+    
+    <!-- Header -->
+    <header class="header">
+      <div class="video-wrapper">
+        <video muted="" autoplay="" loop="">
+          <source src="{{ url_for('static', filename='media/bjj.mp4') }}" type="video/mp4" />
+          Your browser does not support HTML5 video.
+        </video>
+        <div class="video-overlay">
+          <div class="image-overlay">
+            <img src="{{ url_for('static', filename='media/brazamer.png') }}" alt="Overlay Image" class="overlay-image">
+          </div>
+        </div>
+          <div class="banner">
+            <div class="video-content"> 
+              <p class="video-paragraph">
+                At Braz Amer Jiu Jitsu, we're not just passionate about competition; we're passionate about serving. Our veteran-owned company is deeply committed to growing Jiu Jitsu through service. Join us for an unforgettable grappling experience that not only showcases the best in competition, but also celebrates the rich connections made through training. Whether you're an experienced athlete or a casual practitioner, we invite you to be a part of the Braz Amer community!"</p>
+            </div>
+          </div>
+    </header>
+      
+      <!-- End of header -->
+
+      <div class="paragraph-content">
+        <p class="text-paragraph">
+          <section id="about">
+            <h2>About</h2>
+              <p>
+                 Founded to support the growing need for quality competition, Braz Amer Jiu Jitsu is dedicated to providing a unique platform that recognizes and rewards athletes unlike any other competition. Our aim is to create an inclusive community where both competitors and practitioners can thrive, fostering a spirit of excellence and camaraderie. At Braz Amer Jiu Jitsu, we're not just about competition; we're about serving. As a veteran-owned company, we're deeply committed to growing Jiu Jitsu through service. Join us for an unforgettable grappling experience that not only showcases the best in competition but also celebrates the rich connections made through martial arts. Medals are awarded to top placers, and our tournaments emphasize both gi and no-gi divisions, as well as absolute divisions. Our simplified rule set ensures transparency and fairness, with no advantages awarded. We welcome participants of all levels, from experienced athletes to casual practitioners, to be a part of our community.
+              </p><br><br>
+          </section>
+          
+          <section id="simplified-rule-set">
+            <h3>Simplified Rule Set Highlights</h3>
+            <ul>
+                <li>No Advantages Awarded: In our competitions, no advantages are awarded, ensuring transparency and clarity in determining victory.</li>
+                <li>Gi and No-Gi Divisions: Our tournaments feature both gi and no-gi divisions to accommodate different preferences and styles.</li>
+                <li>Absolute Divisions: We offer absolute divisions for those seeking additional challenges and opportunities for recognition.</li>
+            </ul>
+          </section><br><br>
+      
+
+          <div class="bottom-paragraph"></div>
+          <p>© 2023 Braz Amer Jiu Jitsu</p>
+        <button class="text-button">Create Event</button>
+      </div>
+    </div>
+  </body>
+</html>
